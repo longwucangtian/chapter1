@@ -15,7 +15,7 @@ public class CustomerAllController {
 	@Inject
 	private CustomerService customerService;
 	
-	/**
+	/** 
 	 * 进入 客户列表 界面
 	 */
 	@Action("get:/customer")
