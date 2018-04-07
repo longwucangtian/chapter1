@@ -242,4 +242,58 @@ public class DatabaseHelper {
 		}
 	}
 	
+	/**
+	 * 开启事务
+	 */
+	public static void beginTransaction(){
+		Connection conn = getConnection();
+		if(conn != null){
+			try{
+				conn.setAutoCommit(false);
+			}catch(SQLException e){
+				LOGGER.error("begin transaction failyre",e);
+				throw new RuntimeException(e);
+			}
+			finally {
+				CONNECTION_HOLDER.set(conn);
+			}
+		}
+	}
+	
+	/**
+	 * 提交事务
+	 */
+	public static void commitTransaction(){
+		Connection conn = getConnection();
+		if(conn != null){
+			try{
+				conn.commit();
+				conn.close();
+			}catch(Exception e){
+				LOGGER.error("commit transaction failure",e);
+				throw new RuntimeException(e);
+			}finally {
+				CONNECTION_HOLDER.set(conn);
+			}
+		}
+	}
+	
+	/**
+	 * 回滚事务
+	 */
+	public static void rollBackTransaction(){
+		Connection conn = getConnection();
+		if(conn != null){
+			try{
+				conn.rollback();
+				conn.close();
+			}catch(Exception e){
+				LOGGER.error("rollback transaction failure",e);
+				throw new RuntimeException(e);
+			}
+			finally {
+				CONNECTION_HOLDER.set(conn);
+			}
+		}
+	}
 }
