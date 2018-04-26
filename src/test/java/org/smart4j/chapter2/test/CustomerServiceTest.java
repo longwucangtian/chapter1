@@ -7,9 +7,9 @@ import java.util.List;
 
 import org.junit.Before;
 import org.junit.Test;
-import org.smart4j.chapter2.helper.DatabaseHelper;
-import org.smart4j.chapter2.model.Customer;
-import org.smart4j.chapter2.service.CustomerService;
+import org.smart4j.chapter.helper.DatabaseHelper;
+import org.smart4j.chapter.model.Customer;
+import org.smart4j.chapter.service.CustomerService;
 
 public class CustomerServiceTest {
 	

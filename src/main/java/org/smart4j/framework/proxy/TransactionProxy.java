@@ -5,7 +5,7 @@ import java.lang.reflect.Method;
 import org.junit.internal.MethodSorter;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
-import org.smart4j.chapter2.helper.DatabaseHelper;
+import org.smart4j.chapter.helper.DatabaseHelper;
 import org.smart4j.framework.annotation.Transaction;
 
 import com.mysql.fabric.xmlrpc.base.Data;
